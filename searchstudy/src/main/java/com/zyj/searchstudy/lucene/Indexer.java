@@ -32,6 +32,7 @@ public class Indexer {
 
         IndexWriterConfig indexWriterConfig = new IndexWriterConfig(analyzer);
         indexWriterConfig.setOpenMode(IndexWriterConfig.OpenMode.CREATE);
+//        indexWriterConfig.setUseCompoundFile(false);
 
         indexWriter = new IndexWriter(directory, indexWriterConfig);
 
@@ -48,7 +49,12 @@ public class Indexer {
         article2.setTitle("Lucene2全文检索");
         article2.setContent("Lucene2是全文搜索引擎");
 
-        List<Article> articleList = Lists.newArrayList(article1, article2);
+        Article article3 = new Article();
+        article3.setId(3);
+        article3.setTitle("Lucene3全文检索");
+        article3.setContent("Lucene3是全文搜索引擎");
+
+        List<Article> articleList = Lists.newArrayList(article1, article2,article3);
         for (Article article : articleList) {
             Document document = new Document();
             document.add(new TextField("id", article.getId().toString(), Field.Store.YES));
