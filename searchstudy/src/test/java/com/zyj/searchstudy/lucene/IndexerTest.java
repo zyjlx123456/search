@@ -17,6 +17,7 @@ public class IndexerTest {
         indexer.index();
         long end = System.currentTimeMillis();
         System.out.println("indexing time:" + (end- start));
+        System.out.println("here");
 
     }
 }
