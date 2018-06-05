@@ -60,7 +60,7 @@ public class Indexer {
             document.add(new TextField("id", article.getId().toString(), Field.Store.YES));
             document.add(new TextField("title", article.getTitle(), Field.Store.YES));
             document.add(new TextField("content", article.getContent(), Field.Store.YES));
-            indexWriter.addDocument(00p.;9ik9-/-/);
+            indexWriter.addDocument(document);
         }
         indexWriter.close();
     }
