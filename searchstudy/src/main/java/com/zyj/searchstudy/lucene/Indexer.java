@@ -54,13 +54,13 @@ public class Indexer {
         article3.setTitle("Lucene3全文检索");
         article3.setContent("Lucene3是全文搜索引擎");
 
-        List<Article> articleList = Lists.newArrayList(article1, article2,article3);
+        List<Article> articleList = Lists.newArrayList(article1, article2, article3);
         for (Article article : articleList) {
             Document document = new Document();
             document.add(new TextField("id", article.getId().toString(), Field.Store.YES));
             document.add(new TextField("title", article.getTitle(), Field.Store.YES));
             document.add(new TextField("content", article.getContent(), Field.Store.YES));
-            indexWriter.addDocument(00p.;9ik9-/-/);
+            indexWriter.addDocument(document);
         }
         indexWriter.close();
     }
