@@ -7,14 +7,24 @@
     <groupId>com.zyj</groupId>
     <artifactId>search</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <modules>
         <module>searchstudy</module>
+        <module>searchstudy-web</module>
     </modules>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.3.RELEASE</version>
+        <relativePath/>
+    </parent>
 
     <properties>
         <java-version>1.7</java-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <searchstudey.version>1.0.0-SNAPSHOT</searchstudey.version>
     </properties>
 
     <dependencyManagement>
@@ -37,6 +47,19 @@
             </dependency>
 
             <dependency>
+                <groupId>org.elasticsearch</groupId>
+                <artifactId>elasticsearch</artifactId>
+                <version>6.2.4</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.elasticsearch.plugin</groupId>
+                <artifactId>transport-netty4-client</artifactId>
+                <version>6.2.4</version>
+            </dependency>
+
+
+            <dependency>
                 <groupId>com.floragunn</groupId>
                 <artifactId>search-guard-ssl</artifactId>
                 <version>6.2.4-25.3</version>
@@ -49,23 +72,23 @@
                 <version>1.7.21</version>
             </dependency>
 
-            <dependency>
-                <groupId>org.apache.logging.log4j</groupId>
-                <artifactId>log4j-slf4j-impl</artifactId>
-                <version>2.7</version>
-            </dependency>
+            <!--<dependency>-->
+                <!--<groupId>org.apache.logging.log4j</groupId>-->
+                <!--<artifactId>log4j-slf4j-impl</artifactId>-->
+                <!--<version>2.7</version>-->
+            <!--</dependency>-->
 
-            <dependency>
-                <groupId>org.apache.logging.log4j</groupId>
-                <artifactId>log4j-api</artifactId>
-                <version>2.7</version>
-            </dependency>
+            <!--<dependency>-->
+                <!--<groupId>org.apache.logging.log4j</groupId>-->
+                <!--<artifactId>log4j-api</artifactId>-->
+                <!--<version>2.7</version>-->
+            <!--</dependency>-->
 
-            <dependency>
-                <groupId>org.apache.logging.log4j</groupId>
-                <artifactId>log4j-core</artifactId>
-                <version>2.7</version>
-            </dependency>
+            <!--<dependency>-->
+                <!--<groupId>org.apache.logging.log4j</groupId>-->
+                <!--<artifactId>log4j-core</artifactId>-->
+                <!--<version>2.7</version>-->
+            <!--</dependency>-->
 
             <dependency>
                 <groupId>junit</groupId>
@@ -73,7 +96,11 @@
                 <version>4.12</version>
             </dependency>
 
-
+            <dependency>
+                <groupId>com.zyj</groupId>
+                <artifactId>searchstudy</artifactId>
+                <version>${searchstudey.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
